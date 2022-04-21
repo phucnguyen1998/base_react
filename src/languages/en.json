@@ -1,0 +1,13 @@
+{
+  "language.en": "English",
+  "language.cn": "Chineses",
+  "language.vi": "vietnamese",
+  "main_menu.home": "Home",
+  "main_menu.services": "Services",
+  "main_menu.about_us": "About Us",
+  "main_menu.contact": "Contact",
+  "main_menu.login_button": "Login",
+  "user_menu.my_profile": "My Profile",
+  "user_menu.logout": "Log out",
+  "footer.copyright": "{{year}} All Rights Reserved Terms Of Use and Privacy Policy"
+}

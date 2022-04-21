@@ -3,11 +3,39 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './store/configureStore'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import './services/config'
+import APP_THEME from './constants/theme'
+import i18next from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import { languagesResources } from './constants/common'
+import { BrowserRouter } from "react-router-dom";
+
+
+i18next.use(initReactI18next).init({
+  resources: languagesResources,
+  interpolation: {
+    escapeValue: false,
+  },
+  lng: 'en',
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider theme={APP_THEME}>
+          <CssBaseline />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 

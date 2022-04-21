@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react'
 import './App.css';
+import { shallowEqual, useSelector } from 'react-redux'
+import Loader from './components/common/Loader'
+import Footer from './components/common/Footer'
+import Header from './components/common/Header'
+import Routes from './routes';
+
+const MainLayout = ({ children }) => {
+  const { restoring } = useSelector((state) => state.layout, shallowEqual)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (loading !== restoring) {
+      setLoading(restoring)
+    }
+  }, [loading, restoring])
+
+  if (loading) {
+    return <Loader includedLogo />
+  }
+
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
+}
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainLayout>
+      <Routes />
+    </MainLayout>
   );
 }
 
