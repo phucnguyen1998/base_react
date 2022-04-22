@@ -9,19 +9,19 @@ import logo from '../../logo.svg';
 const socialConfigs = [
   {
     icon: <FacebookIcon />,
-    url: process.env.NEXT_PUBLIC_FACEBOOK_URL || '#/',
+    url: process.env.REACT_APP_FACEBOOK_URL || '#/',
   },
   {
     icon: <TwitterIcon />,
-    url: process.env.NEXT_PUBLIC_TWITTER_URL || '#/',
+    url: process.env.REACT_APP_TWITTER_URL || '#/',
   },
   {
     icon: <InstagramIcon />,
-    url: process.env.NEXT_PUBLIC_INSTAGRAM_URL || '#/',
+    url: process.env.REACT_APP_INSTAGRAM_URL || '#/',
   },
   {
     icon: <LinkedInIcon />,
-    url: process.env.NEXT_PUBLIC_LINKEDIN_URL || '#/',
+    url: process.env.REACT_APP_LINKEDIN_URL || '#/',
   },
 ]
 
