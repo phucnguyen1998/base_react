@@ -1,7 +1,7 @@
 import Logo from './../components/common/Logo'
 
 export default {
-  title: 'Logo',
+  title: 'Components/Logo',
   component: Logo
 }
 

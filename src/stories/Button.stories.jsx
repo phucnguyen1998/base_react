@@ -1,7 +1,7 @@
 import StyledButton from "../components/common/StyledButton"
 
 export default {
-  title: 'StyledButton',
+  title: 'Components/StyledButton',
   component: StyledButton
 }
 
